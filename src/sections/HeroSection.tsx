@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import gsap from 'gsap';
 import { VideoBackground } from '../components/VideoBackground';
 
-const ROLES = ["Software Dev", "UI/UX Designer", "IoT Enthusiast", "Problem Solver"];
+const ROLES = ["IoT Engineering Student", "Network Engineering Intern", "Backend Developer", "Cloud Enthusiast"];
 
 export const HeroSection: React.FC = () => {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -67,11 +67,15 @@ export const HeroSection: React.FC = () => {
           
           {/* Nav Links */}
           <div className="flex items-center gap-1">
-            {["Home", "Work", "Resume"].map((link, i) => (
-              <a key={link} href={`#${link.toLowerCase()}`} className={`text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors ${i === 0 ? 'text-text-primary bg-stroke/50' : 'text-muted hover:text-text-primary hover:bg-stroke/50'}`}>
-                {link}
-              </a>
-            ))}
+            <a href="#work" className="text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors text-text-primary bg-stroke/50">
+              Work
+            </a>
+            <a href="#experience" className="text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors text-muted hover:text-text-primary hover:bg-stroke/50">
+              Experience
+            </a>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors text-muted hover:text-text-primary hover:bg-stroke/50">
+              Resume
+            </a>
           </div>
 
           <div className="w-px h-5 bg-stroke mx-1 hidden sm:block" />

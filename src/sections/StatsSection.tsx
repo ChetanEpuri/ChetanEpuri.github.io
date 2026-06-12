@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const STATS = [
-  { value: "4+", label: "Years Programming" },
-  { value: "10+", label: "Projects Completed" },
-  { value: "100%", label: "Dedication" }
+  { value: "4+", label: "Programming Languages" },
+  { value: "5+", label: "Major Projects" },
+  { value: "2", label: "Cloud Certifications" }
 ];
 
 export const StatsSection: React.FC = () => {
