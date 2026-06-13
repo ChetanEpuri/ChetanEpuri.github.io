@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SplineScene } from '../components/SplineScene';
 
 const PROJECTS = [
   {
@@ -42,12 +41,7 @@ const PROJECTS = [
 
 export const WorksSection: React.FC = () => {
   return (
-    <section id="work" className="relative py-12 md:py-16 overflow-hidden">
-      {/* Spline Background */}
-      <div className="absolute inset-0 -z-10 opacity-60 mix-blend-screen pointer-events-none">
-        <SplineScene scene="https://prod.spline.design/G8yO6mga4wypfAcN/scene.splinecode" className="w-full h-full object-cover" />
-      </div>
-
+    <section id="work" className="relative py-12 md:py-16">
       <div className="relative z-10 max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
         
         {/* Header */}

@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SplineScene } from '../components/SplineScene';
 
 const EXPERIENCES = [
   {
@@ -35,12 +34,7 @@ const EXPERIENCES = [
 
 export const ExperienceSection: React.FC = () => {
   return (
-    <section id="experience" className="relative py-16 md:py-24 overflow-hidden">
-      {/* Spline Background */}
-      <div className="absolute inset-0 -z-10 opacity-60 mix-blend-screen pointer-events-none">
-        <SplineScene scene="https://prod.spline.design/G8yO6mga4wypfAcN/scene.splinecode" className="w-full h-full object-cover" />
-      </div>
-
+    <section id="experience" className="relative py-16 md:py-24">
       <div className="relative z-10 max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
         
         {/* Header */}
