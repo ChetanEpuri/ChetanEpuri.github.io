@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ProjectsSpline } from '../components/ProjectsSpline';
 
 const PROJECTS = [
   {
@@ -41,39 +42,52 @@ const PROJECTS = [
 
 export const WorksSection: React.FC = () => {
   return (
-    <section id="work" className="relative py-12 md:py-16">
-      <div className="relative z-10 max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16">
+    <section id="work" className="relative flex flex-col pt-0 pb-16 md:pb-24">
+      
+      {/* Full Screen Header Area with Spline Background */}
+      <div className="relative w-full min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden mb-16 md:mb-24 border-b border-stroke/30">
         
-        {/* Header */}
+        {/* Spline 3D Asset */}
+        <ProjectsSpline />
+        
+        {/* Title Overlay */}
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true }}
+          className="relative z-20 text-center px-6 pointer-events-none"
         >
-          <div>
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-8 h-px bg-stroke" />
-              <span className="text-xs text-muted uppercase tracking-[0.3em]">Selected Work</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl text-text-primary tracking-tight">
-              Featured <span className="font-display italic">projects</span>
-            </h2>
-            <p className="text-muted mt-4 max-w-sm text-sm md:text-base">
-              A selection of projects encompassing cloud networking, AI integrations, and full-stack development.
-            </p>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="w-12 h-px bg-stroke" />
+            <span className="text-sm text-muted uppercase tracking-[0.4em]">Selected Work</span>
+            <div className="w-12 h-px bg-stroke" />
           </div>
-          
-          <a href="https://github.com/ChetanEpuri" target="_blank" rel="noopener noreferrer" className="hidden md:inline-flex items-center gap-2 relative group rounded-full border border-stroke px-6 py-3 text-sm hover:border-transparent transition-colors">
-            <span className="absolute inset-[-2px] rounded-full accent-gradient animate-gradient-shift opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
-            <div className="absolute inset-0 bg-bg rounded-full -z-10" />
-            <span className="text-text-primary">View all work</span>
-            <span className="text-text-primary">→</span>
-          </a>
+          <h2 className="text-5xl md:text-7xl lg:text-8xl text-text-primary tracking-tighter mb-6 drop-shadow-2xl">
+            My <span className="font-display italic text-transparent bg-clip-text bg-gradient-to-r from-white to-white/60">Projects</span>
+          </h2>
+          <p className="text-muted max-w-xl mx-auto text-base md:text-lg">
+            A selection of projects encompassing cloud networking, AI integrations, and full-stack development.
+          </p>
+
+          <div className="mt-12">
+            <a href="https://github.com/ChetanEpuri" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 relative group rounded-full border border-stroke px-8 py-4 text-sm hover:border-transparent transition-colors pointer-events-auto">
+              <span className="absolute inset-[-2px] rounded-full accent-gradient animate-gradient-shift opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+              <div className="absolute inset-0 bg-bg rounded-full -z-10" />
+              <span className="text-text-primary">View GitHub</span>
+              <span className="text-text-primary group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+          </div>
         </motion.div>
 
-        {/* Bento Grid */}
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+          <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent" />
+        </div>
+      </div>
+
+      {/* Bento Grid */}
+      <div className="relative z-10 max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 w-full">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-6">
           {PROJECTS.map((project, index) => (
             <div 
@@ -112,8 +126,8 @@ export const WorksSection: React.FC = () => {
             </div>
           ))}
         </div>
-        
       </div>
     </section>
   );
 };
+
