@@ -14,7 +14,7 @@ export function ProjectsSpline() {
       >
         <Suspense fallback={null}>
           <Spline 
-            scene="https://prod.spline.design/G8yO6mga4wypfAcN/scene.splinecode" 
+            scene="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode" 
             style={{ width: '100%', height: '100%' }}
           />
         </Suspense>
