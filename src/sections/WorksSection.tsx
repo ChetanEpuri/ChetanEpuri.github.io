@@ -45,7 +45,7 @@ export const WorksSection: React.FC = () => {
     <section id="work" className="relative flex flex-col pt-0 pb-16 md:pb-24">
       
       {/* Full Screen Header Area with Spline Background */}
-      <div className="relative w-full min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden mb-16 md:mb-24 border-b border-stroke/30">
+      <div className="relative w-full min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden mb-16 md:mb-24">
         
         {/* Spline 3D Asset */}
         <ProjectsSpline />

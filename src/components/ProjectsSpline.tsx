@@ -10,12 +10,17 @@ export function ProjectsSpline() {
     <ErrorBoundary fallback={<div className="absolute inset-0 bg-transparent pointer-events-none -z-10" />}>
       <div 
         ref={containerRef} 
-        className="absolute inset-0 pointer-events-none -z-0 origin-center flex items-center justify-center"
+        className="absolute inset-[-10%] z-0 origin-center flex items-center justify-center pointer-events-none"
+        style={{
+          // Creates a seamless fade into the `#050505` background instead of sharp boxed edges
+          maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)',
+          WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)'
+        }}
       >
         <Suspense fallback={null}>
           <Spline 
             scene="https://prod.spline.design/Js-5tpuSzADOjULb/scene.splinecode" 
-            style={{ width: '100%', height: '100%' }}
+            className="w-full h-full scale-[1.15]" 
           />
         </Suspense>
       </div>
