@@ -52,43 +52,7 @@ export const HeroSection: React.FC = () => {
       {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-bg to-transparent z-10" />
 
-      {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 md:pt-6 px-4">
-        <div className={`inline-flex items-center rounded-full backdrop-blur-md border border-white/10 bg-surface px-2 py-2 transition-shadow duration-300 ${scrolled ? 'shadow-md shadow-black/10' : ''}`}>
-          {/* Logo */}
-          <div className="group relative w-9 h-9 rounded-full p-[1px] cursor-pointer transition-transform duration-300 hover:scale-110">
-            <div className="absolute inset-0 rounded-full accent-gradient animate-gradient-shift group-hover:direction-reverse" />
-            <div className="absolute inset-[1px] bg-bg rounded-full flex items-center justify-center font-display italic text-[13px] text-text-primary z-10">
-              CE
-            </div>
-          </div>
-          
-          <div className="w-px h-5 bg-stroke mx-1 hidden sm:block" />
-          
-          {/* Nav Links */}
-          <div className="flex items-center gap-1">
-            <a href="#work" className="text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors text-text-primary bg-stroke/50">
-              Work
-            </a>
-            <a href="#experience" className="text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors text-muted hover:text-text-primary hover:bg-stroke/50">
-              Experience
-            </a>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors text-muted hover:text-text-primary hover:bg-stroke/50">
-              Resume
-            </a>
-          </div>
 
-          <div className="w-px h-5 bg-stroke mx-1 hidden sm:block" />
-          
-          {/* Say hi button */}
-          <a href="mailto:epuri.chetan@gmail.com" className="relative group text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 flex items-center gap-1">
-            <span className="absolute inset-[-2px] rounded-full accent-gradient animate-gradient-shift opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
-            <div className="absolute inset-0 bg-surface rounded-full backdrop-blur-md -z-10" />
-            <span className="text-text-primary">Say hi</span>
-            <span className="text-text-primary">↗</span>
-          </a>
-        </div>
-      </nav>
 
       {/* Hero Content */}
       <div className="relative z-20 flex flex-col items-center text-center px-6">
