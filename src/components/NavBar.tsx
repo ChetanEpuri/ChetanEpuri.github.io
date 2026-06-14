@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 export const NavBar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,7 +14,20 @@ export const NavBar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isHome = location.pathname === '/';
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      // If already on home page, just update the hash and scroll
+      window.history.pushState(null, '', `/#${hash}`);
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If on another page, navigate to home with the hash
+      navigate(`/#${hash}`);
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-[100] flex justify-center pt-4 md:pt-6 px-4">
@@ -30,25 +44,12 @@ export const NavBar: React.FC = () => {
         
         {/* Nav Links */}
         <div className="flex items-center gap-1">
-          {isHome ? (
-            <>
-              <a href="#work" className="text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors text-muted hover:text-text-primary hover:bg-stroke/50">
-                Work
-              </a>
-              <a href="#experience" className="text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors text-muted hover:text-text-primary hover:bg-stroke/50">
-                Experience
-              </a>
-            </>
-          ) : (
-            <>
-              <Link to="/#work" className="text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors text-muted hover:text-text-primary hover:bg-stroke/50">
-                Work
-              </Link>
-              <Link to="/#experience" className="text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors text-muted hover:text-text-primary hover:bg-stroke/50">
-                Experience
-              </Link>
-            </>
-          )}
+          <a href="#work" onClick={(e) => handleNavClick(e, 'work')} className="text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors text-muted hover:text-text-primary hover:bg-stroke/50">
+            Work
+          </a>
+          <a href="#experience" onClick={(e) => handleNavClick(e, 'experience')} className="text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors text-muted hover:text-text-primary hover:bg-stroke/50">
+            Experience
+          </a>
           <Link to="/resume" className={`text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors ${location.pathname === '/resume' ? 'text-text-primary bg-stroke/50' : 'text-muted hover:text-text-primary hover:bg-stroke/50'}`}>
             Resume
           </Link>
