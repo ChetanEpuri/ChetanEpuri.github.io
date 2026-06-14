@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
 import gsap from 'gsap';
-import { VideoBackground } from '../components/VideoBackground';
 
 const ROLES = ["IoT Engineering Student", "Network Engineering Intern", "Backend Developer", "Cloud Enthusiast"];
 
