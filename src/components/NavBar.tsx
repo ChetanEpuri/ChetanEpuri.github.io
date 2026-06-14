@@ -33,9 +33,10 @@ export const NavBar: React.FC = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-[100] flex justify-center pt-4 md:pt-6 px-4 pointer-events-none">
       <div className={`transition-shadow duration-300 pointer-events-auto rounded-full ${scrolled ? 'shadow-[0_8px_32px_rgba(0,0,0,0.5)]' : ''}`}>
+        {/* @ts-ignore */}
         <GlassSurface
-          width="auto"
-          height="auto"
+          width={"auto" as any}
+          height={"auto" as any}
           borderRadius={9999}
           blur={15}
           opacity={0.8}
