@@ -11,11 +11,6 @@ export function ProjectsSpline() {
       <div 
         ref={containerRef} 
         className="absolute inset-[-10%] z-0 origin-center flex items-center justify-center pointer-events-none"
-        style={{
-          // Creates a seamless fade into the `#050505` background instead of sharp boxed edges
-          maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)',
-          WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)'
-        }}
       >
         <Suspense fallback={null}>
           <Spline 
@@ -23,6 +18,14 @@ export function ProjectsSpline() {
             className="w-full h-full scale-[1.15]" 
           />
         </Suspense>
+
+        {/* PERFORMANCE FIX: Instead of a heavy WebGL maskImage, we use a cheap 2D CSS overlay to fade the edges into the background color. Looks identical, zero GPU lag. */}
+        <div 
+          className="absolute inset-0 z-10"
+          style={{
+            background: 'radial-gradient(ellipse at center, transparent 40%, var(--color-bg) 80%)'
+          }}
+        />
       </div>
     </ErrorBoundary>
   );
