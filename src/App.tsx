@@ -3,6 +3,7 @@ import { LoadingScreen } from './components/LoadingScreen'
 import { HeroSection } from './sections/HeroSection'
 import { WorksSection } from './sections/WorksSection'
 import { ExperienceSection } from './sections/ExperienceSection'
+import { JournalSection } from './sections/JournalSection'
 import { SkillsSection } from './sections/SkillsSection'
 import { StatsSection } from './sections/StatsSection'
 import { FooterSection } from './sections/FooterSection'
@@ -18,6 +19,7 @@ function App() {
         <HeroSection />
         <WorksSection />
         <ExperienceSection />
+        <JournalSection />
         <SkillsSection />
         <StatsSection />
         <FooterSection />
