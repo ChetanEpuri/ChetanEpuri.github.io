@@ -14,7 +14,7 @@ export function ProjectsSpline() {
       >
         <Suspense fallback={null}>
           <Spline 
-            scene="https://prod.spline.design/Js-5tpuSzADOjULb/scene.splinecode" 
+            scene="https://prod.spline.design/MU0CuIHRi3DZreng/scene.splinecode" 
             className="w-full h-full scale-[1.15]" 
           />
         </Suspense>
