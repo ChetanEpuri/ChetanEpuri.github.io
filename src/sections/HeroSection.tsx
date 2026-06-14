@@ -6,7 +6,6 @@ const ROLES = ["IoT Engineering Student", "Network Engineering Intern", "Backend
 
 export const HeroSection: React.FC = () => {
   const [roleIndex, setRoleIndex] = useState(0);
-  const [scrolled, setScrolled] = useState(false);
   const containerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -14,14 +13,6 @@ export const HeroSection: React.FC = () => {
       setRoleIndex((prev) => (prev + 1) % ROLES.length);
     }, 2000);
     return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 100);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
