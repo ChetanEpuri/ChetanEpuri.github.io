@@ -64,7 +64,7 @@ const GlassSurface = ({
       </svg>
     `;
 
-    return \`data:image/svg+xml,\${encodeURIComponent(svgContent)}\`;
+    return `data:image/svg+xml,${encodeURIComponent(svgContent)}`;
   };
 
   const updateDisplacementMap = () => {
@@ -139,25 +139,25 @@ const GlassSurface = ({
     }
 
     const div = document.createElement('div');
-    div.style.backdropFilter = \`url(#\${filterId})\`;
+    div.style.backdropFilter = `url(#${filterId})`;
 
     return div.style.backdropFilter !== '';
   };
 
   const containerStyle = {
     ...style,
-    width: typeof width === 'number' ? \`\${width}px\` : width,
-    height: typeof height === 'number' ? \`\${height}px\` : height,
-    borderRadius: \`\${borderRadius}px\`,
+    width: typeof width === 'number' ? `${width}px` : width,
+    height: typeof height === 'number' ? `${height}px` : height,
+    borderRadius: `${borderRadius}px`,
     '--glass-frost': backgroundOpacity,
     '--glass-saturation': saturation,
-    '--filter-id': \`url(#\${filterId})\`
+    '--filter-id': `url(#${filterId})`
   };
 
   return (
     <div
       ref={containerRef}
-      className={\`glass-surface \${svgSupported ? 'glass-surface--svg' : 'glass-surface--fallback'} \${className}\`}
+      className={`glass-surface ${svgSupported ? 'glass-surface--svg' : 'glass-surface--fallback'} ${className}`}
       style={containerStyle}
     >
       <svg className="glass-surface__filter" xmlns="http://www.w3.org/2000/svg">
