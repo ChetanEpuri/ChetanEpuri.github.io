@@ -1,73 +1,63 @@
-# React + TypeScript + Vite
+<div align="center">
+  <img src="screenshot.png" alt="Portfolio Screenshot" width="100%" style="border-radius: 12px; margin-bottom: 20px;" />
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  # 🌌 Chetan Epuri - Personal Portfolio
+  
+  **An immersive, cosmic-themed personal portfolio built with React & Framer Motion.**
 
-Currently, two official plugins are available:
+  [![Live Site](https://img.shields.io/badge/Live-Website-00E5FF?style=for-the-badge&logo=vercel)](https://chetanepuri.github.io/)
+  [![React](https://img.shields.io/badge/React-19.2-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
+  [![Vite](https://img.shields.io/badge/Vite-6.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Welcome to the source code for my personal portfolio. Designed to be more than just a resume, this space serves as an immersive digital experience utilizing fluid animations, cosmic aesthetics, and modern web architecture.
 
-## Expanding the ESLint configuration
+## ✨ Key Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Immersive Video Backgrounds**: High-performance HTTP Live Streaming (HLS.js) backgrounds powered by Mux.
+- **Fluid Animations**: Smooth page transitions and micro-interactions orchestrated via `framer-motion` and `GSAP`.
+- **Glassmorphism UI**: Beautiful, translucent glass surfaces layered dynamically over cosmic backgrounds.
+- **Custom Loading Screen**: An engaging, animated intro sequence that seamlessly transitions into the application.
+- **Client-Side Routing**: Fast and snappy navigation powered by React Router.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Technology Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Core**: React 19, TypeScript, Vite
+- **Styling**: Tailwind CSS v4, PostCSS
+- **Animation**: Framer Motion, GSAP
+- **Media**: HLS.js (for adaptive bitrate video streaming)
+- **Icons**: Lucide React
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📦 Local Development
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Want to spin this up locally? 
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/ChetanEpuri/ChetanEpuri.github.io.git
+   cd ChetanEpuri.github.io
+   ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+## 🌐 Deployment
+
+This project is automatically deployed to GitHub Pages. The source code lives on the `main` branch, and the build pipeline handles compiling the Vite application for production viewing.
+
+---
+<div align="center">
+  <p><i>Crafted with passion, code, and caffeine.</i></p>
+</div>
